@@ -1,0 +1,158 @@
+.container-xxl {
+  width: 100%;
+  max-width: 1450px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.container-xl {
+  width: 100%;
+  max-width: 1230px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.container-md {
+  width: 100%;
+  max-width: 990px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.container-lg {
+  width: 100%;
+  max-width: 1170px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.container-gv {
+  width: 100%;
+  max-width: 1350px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-gv-5 {
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 20%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (max-width: 1199px) {
+  .col-gv-5 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+@media (max-width: 991px) {
+  .col-gv-5 {
+    -ms-flex: 0 0 33.333334%;
+    flex: 0 0 33.333334%;
+    max-width: 33.333334%;
+  }
+}
+@media (max-width: 767px) {
+  .col-gv-5 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+@media (max-width: 575px) {
+  .col-gv-5 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+.padding-v-0 {
+  padding: 0;
+}
+.padding-h-0 {
+  padding: 0;
+}
+.box {
+  padding: 40px;
+}
+.padding-top-10 {
+  padding-top: 10px;
+}
+.padding-bottom-10 {
+  padding-bottom: 10px;
+}
+.padding-top-15 {
+  padding-top: 15px;
+}
+.padding-bottom-15 {
+  padding-bottom: 15px;
+}
+.padding-top-20 {
+  padding-top: 20px;
+}
+.padding-bottom-20 {
+  padding-bottom: 20px;
+}
+.padding-top-25 {
+  padding-top: 25px;
+}
+.padding-bottom-25 {
+  padding-bottom: 25px;
+}
+.padding-top-30 {
+  padding-top: 30px;
+}
+.padding-bottom-30 {
+  padding-bottom: 30px;
+}
+.padding-top-35 {
+  padding-top: 35px;
+}
+.padding-bottom-35 {
+  padding-bottom: 35px;
+}
+.padding-top-40 {
+  padding-top: 40px;
+}
+.padding-bottom-40 {
+  padding-bottom: 40px;
+}
+.padding-top-50 {
+  padding-top: 50px;
+}
+.padding-bottom-50 {
+  padding-bottom: 50px;
+}
+.padding-top-60 {
+  padding-top: 60px;
+}
+.padding-bottom-60 {
+  padding-bottom: 60px;
+}
+.padding-top-80 {
+  padding-top: 80px;
+}
+.padding-bottom-80 {
+  padding-bottom: 80px;
+}
+.posr {
+  position: relative;
+}
+.posa {
+  position: absolute;
+}
+.posf {
+  position: fixed;
+}
+.full-image img {
+  width: 100%;
+  height: auto;
+}
+.flex {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}

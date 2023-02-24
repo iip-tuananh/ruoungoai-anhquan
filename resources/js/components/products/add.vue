@@ -75,7 +75,7 @@
                 <ImageMulti v-model="objData.images" :title="'san-pham'"/> 
               </div>
               <div class="form-group">
-                <label>Giá sản phẩm</label>
+                <label>Khoảng giá sản phẩm</label>
                 <div class="row">
                   <div class="col-md-6">
                     <vs-input
@@ -96,9 +96,9 @@
                       class="w-100"
                       v-model="objData.price_big"
                     />
-                  </div>
+                  </div> -->
                 </div>
-              </div> -->
+              </div>
               <div class="form-group">
                 <label>Phần trăm giảm giá (%)</label>
                 <vs-input

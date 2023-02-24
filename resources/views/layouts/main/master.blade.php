@@ -78,7 +78,7 @@
         <input type="hidden" name="imgLogo" id ="logoimg" value="{{ url('' . $setting->logo) }}">
         <script type='text/javascript' id='dispensary-age-verification-js-extra'>
             /* <![CDATA[ */
-            var imgLogo = document.getElementById('logoimg').val();
+            var imgLogo = document.getElementById('logoimg').value;
             var object_name = {
             bgImage: "",
             minAge: "18",

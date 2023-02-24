@@ -112,39 +112,38 @@ $(document).ready(function() {
 });
 
 /** Suggest Seach */
-function suggest_search($value){
+// function suggest_search($value){
         
-    $.ajax({ 
-        type: "POST", 
-        dataType: "json",
-        async: true,
-        cache: false,
-        url: $Base_site + "/ajaxload.php",
-        data: {
-            action: "suggestsearch",
-            keyword: $value,
-        },
-		beforeSend: function(){
-			$('.load_content').show();
-        },
-        success: function(response) {
-            $('#suggest_search').html(response.result);
-			$('.load_content').hide();
-			//console.log(response.mored);
-            if(response.mored != ''){
-                $('.show-more').html(response.mored);
-                $('.show-more').show();
-            }else{
-                $('.show-more').hide();
-            }
+//     $.ajax({ 
+//         type: "POST", 
+//         async: true,
+//         cache: false,
+//         url: $Base_site + "/ajaxload.php",
+//         data: {
+//             action: "suggestsearch",
+//             keyword: $value,
+//         },
+// 		beforeSend: function(){
+// 			$('.load_content').show();
+//         },
+//         success: function(response) {
+//             $('#suggest_search').html(response.result);
+// 			$('.load_content').hide();
+// 			//console.log(response.mored);
+//             if(response.mored != ''){
+//                 $('.show-more').html(response.mored);
+//                 $('.show-more').show();
+//             }else{
+//                 $('.show-more').hide();
+//             }
             
-        },
-        error: function( jqXHR, textStatus, errorThrown ){
-            console.log( 'The following error occurred: ' + textStatus, errorThrown );
-        }
+//         },
+//         error: function( jqXHR, textStatus, errorThrown ){
+//             console.log( 'The following error occurred: ' + textStatus, errorThrown );
+//         }
     
-    });        
-}
+//     });        
+// }
 
 /** Search **/
 jQuery(document).ready(function ($) {
@@ -313,113 +312,88 @@ $(document).ready(function () {
 
 
 /** Add to cart Flying */
-function AnimationCart($this){
-	var $el=$this.closest('.variant');
-	/*console.log($this.offset().top-10);*/
-	/*console.log($this.offset().left-10); */
-	var $mb=$this.closest('.variant-mb');
-	if($el.length != 0 || $mb.length != 0){
-			/* var $form=$el.find('form'); */
-			var $imgToDrag=$('.add-to-cart-animation').eq(0);
-			var $basketImage=$('.box-cart-image');
-				/* var addToCartIconClass=$form.data('add-to-basket-icon-class'); */
-			var $headerBasketPlaceholder=$('.mobi_cart_image'),
-				$animationTarget = $headerBasketPlaceholder.length&&$headerBasketPlaceholder.is(':visible')?$headerBasketPlaceholder:$basketImage;
-				//console.log($animationTarget.offset().top-10);
-				//console.log($animationTarget.offset().left-10);
-			if($imgToDrag.length){
-				$imgToDrag.clone().appendTo('body').addClass('add-to-cart-animation--')
-				.css({
-					'opacity':'0.9',
-					'position':'absolute',
-					'z-index':'10000',
-					'display':'block',
-					'top':$this.offset().top,
-					'left':$this.offset().left,
-				}).animate({
-					'top':$animationTarget.offset().top-10,
-					'left':$animationTarget.offset().left-10,
-				}, 2000,
-				'linear',function(){
-					$(this).fadeOut(400,function(){
-						$(this).remove()
-					})
-				})
-			}
-	}
-}
+// function AnimationCart($this){
+// 	var $el=$this.closest('.variant');
+// 	/*console.log($this.offset().top-10);*/
+// 	/*console.log($this.offset().left-10); */
+// 	var $mb=$this.closest('.variant-mb');
+// 	if($el.length != 0 || $mb.length != 0){
+// 			/* var $form=$el.find('form'); */
+// 			var $imgToDrag=$('.add-to-cart-animation').eq(0);
+// 			var $basketImage=$('.box-cart-image');
+// 				/* var addToCartIconClass=$form.data('add-to-basket-icon-class'); */
+// 			var $headerBasketPlaceholder=$('.mobi_cart_image'),
+// 				$animationTarget = $headerBasketPlaceholder.length&&$headerBasketPlaceholder.is(':visible')?$headerBasketPlaceholder:$basketImage;
+// 				//console.log($animationTarget.offset().top-10);
+// 				//console.log($animationTarget.offset().left-10);
+// 			if($imgToDrag.length){
+// 				$imgToDrag.clone().appendTo('body').addClass('add-to-cart-animation--')
+// 				.css({
+// 					'opacity':'0.9',
+// 					'position':'absolute',
+// 					'z-index':'10000',
+// 					'display':'block',
+// 					'top':$this.offset().top,
+// 					'left':$this.offset().left,
+// 				}).animate({
+// 					'top':$animationTarget.offset().top-10,
+// 					'left':$animationTarget.offset().left-10,
+// 				}, 2000,
+// 				'linear',function(){
+// 					$(this).fadeOut(400,function(){
+// 						$(this).remove()
+// 					})
+// 				})
+// 			}
+// 	}
+// }
 
 /**
  * SHOPPING CART
  */
 $(document).on('click', '.bt_add_cart', function() {
-    AnimationCart($(this));
-	
-	var qty = 1;
-    var id = parseInt($(this).attr('data-id'));
-	
+    var id = $(this).data('id');
+	var url = $(this).data('url');
+	console.log(url);
     $.ajax({
         type: "POST",
         dataType: "json",
-        async: false,
-        cache: false,
-        url: $Base_site + "/ajaxload.php",
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url: url,
         data: {
-            action: "ajaxcustomaddtocart",
-            pid: id,
-            qty: 1,
+			id: id,
         },
-        success: function(response) {
-        	/* var gData = $.parseJSON(response); */
-        	/* console.log(gData); */
-            //console.log(response.cart_result);
-            if($(window).width() > 991){
-				
-				$('.order_box').html(response.cart_result);
-				setTimeout(function(){
-					$('#order-count >i').html(response.cart_count);
-				}, 1200);
-				
-			}
-			setTimeout(function(){
-				$('span#head_count').html(response.cart_count);
-			}, 1200);
-			
+        success: function(data) {
+			$('#shopping_cart').html(data.html1);
+			$.notify("Thêm vào giỏ hàng thành công", "success"
+			);
         },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log('The following error occurred: ' + textStatus, errorThrown);
-        }
     });
 });
 
 /** Update cart */
 $(document).on('click', '.bt-cplus', function() {
-    var id = parseInt($(this).attr('data-pid'));
-	var ck = $(this).attr('data-page');
+	var id = $(this).data('id');
+	var url = $(this).data('url');
+	var quantity = $(this).parent().find('input[name="quantity"]').val();
+
+if( !isNaN( quantity ) && quantity >= 1 ) quantity++;
+
+	
+	console.log(quantity);
     $.ajax({
         type: "POST",
         dataType: "json",
-        async: false,
-        cache: false,
-        url: $Base_site + "/ajaxload.php",
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url: url,
         data: {
-            action: "ajaxcustompluscart",
-            prodid: id,
-            quantity: 1,
-			page: ck,
+           id :id,
+		   quantity :quantity,
+		 
         },
-        success: function(response) {
-            //console.log(response);
-            
-			$('.order_box').html(response.cart_result);
-			$('#order-count >i').html(response.cart_count);
-			if($('.cart_checkout').length == 0){
-				$('.order_box').append(response.cart_link);
-			}			
-			$('span#head_count').html(response.cart_count);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log('The following error occurred: ' + textStatus, errorThrown);
+        success: function(data) {
+            $('#shopping_cart').html(data.html1);
+			$.notify("Tăng số lượng 1", "info");
         }
     });
 });
@@ -427,64 +401,46 @@ $(document).on('click', '.bt-cplus', function() {
 /** Update cart */
 $(document).on('click', '.bt-cminus', function() {
     
-    var id = parseInt($(this).attr('data-pid'));
-	var ck = $(this).attr('data-page');
+	var id = $(this).data('id');
+	var url = $(this).data('url');
+	var quantity = $(this).parent().find('input[name="quantity"]').val();
+
+	if( !isNaN( quantity ) && quantity >= 1 ) quantity--;
+
+	console.log(id,url);
     $.ajax({
         type: "POST",
         dataType: "json",
-        async: false,
-        cache: false,
-        url: $Base_site + "/ajaxload.php",
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url: url,
         data: {
-            action: "ajaxcustomminuscart",
-            prodid: id,
-            quantity: 1,
-			page: ck,
+           id: id,
+		   quantity: quantity,
         },
-        success: function(response) {
-            //console.log(response);
-			
-			$('.order_box').html(response.cart_result);
-			$('#order-count >i').html(response.cart_count);
-			if($('.cart_checkout').length == 0){
-				$('.order_box').append(response.cart_link);
-			}
-			$('span#head_count').html(response.cart_count);
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log('The following error occurred: ' + textStatus, errorThrown);
+        success: function(data) {
+			$('#shopping_cart').html(data.html1);
+			$.notify("Giảm số lượng 1", "info");
         }
     });
 });
 
 /** Remove cart */
 $(document).on('click', '.bt-cremove', function() {
-    var id = parseInt($(this).attr('data-pid'));
-	var ck = $(this).attr('data-page');
+    var id = $(this).data('id');
+	var url = $(this).data('url');
+	console.log(id,url);
     $.ajax({
         type: "POST",
-        dataType: "json",
-        async: false,
-        cache: false,
-        url: $Base_site + "/ajaxload.php",
+		headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        url :url,
         data: {
-            action: "ajaxcustomremovecart",
-            prodid: id,
-			page: ck,
+            id: id,
         },
-        success: function(response) {
-            //console.log(response);
-			
-			$('.order_box').html(response.cart_result);
-			$('#order-count >i').html(response.cart_count);
-			if($('.cart_checkout').length == 0){
-				$('.order_box').append(response.cart_link);
-			}
-			$('span#head_count').html(response.cart_count);
+        success: function(data) {
+			$('#shopping_cart').html(data.html1);
+			$.notify("Xoá sản phẩm thành công !", "error");
         },
-        error: function(jqXHR, textStatus, errorThrown) {
-            console.log('The following error occurred: ' + textStatus, errorThrown);
-        }
+       
     });
 });
 

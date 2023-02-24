@@ -32,8 +32,8 @@
             <div class="form-group">
               <label>Trạng thái</label>
               <vs-select v-model="objData.status">
-                <vs-select-item value="2" text="Banner sản phẩm sale" />
-                <vs-select-item value="1" text="Banner theo danh mục" />
+                <vs-select-item value="1" text="Banner Trên (2)" />
+                <vs-select-item value="2" text="Banner Dưới (4)" />
                 <vs-select-item value="0" text="Ẩn" />
               </vs-select>
             </div>

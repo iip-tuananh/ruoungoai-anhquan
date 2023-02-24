@@ -26,7 +26,7 @@
                            <input type="text" name="updates[]" id="qty{{$item['id']}}"  class="ajaxcart__qty-num number-sidebar" maxlength="3" value="{{$item['quantity']}}" min="0" data-id="" data-line="1" aria-label="quantity" pattern="[0-9]*">
                            <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus items-count"  aria-label="+" onclick="btnPlus({{$item['id']}})">
                            +							
-                           </button>
+                           </button>quantity
                         </div>
                      </div>
                      <div class="grid__item one-half text-right cart_prices">

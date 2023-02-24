@@ -49,8 +49,8 @@
                     <label>Trạng thái</label>
                     <vs-select v-model="item.status"
                   >
-                      <vs-select-item  value="2" text="Đứng im" />
-                      <vs-select-item  value="1" text="Chạy slide" />
+                      <vs-select-item  value="2" text="Banner phụ" />
+                      <vs-select-item  value="1" text="Banner chính" />
                       <vs-select-item  value="0" text="Ẩn" />
                     </vs-select>
                   </div>

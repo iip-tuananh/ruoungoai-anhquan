@@ -18,7 +18,7 @@
                 <vs-th>Danh mục</vs-th>
                 <vs-th>Phân loại sản phẩm</vs-th>
                 <!-- <vs-th>Loại hình sản phẩm</vs-th> -->
-                <vs-th>Thương hiệu sản phẩm</vs-th>
+                <!-- <vs-th>Thương hiệu sản phẩm</vs-th> -->
                 <vs-th>Hành động</vs-th>
               </template>
               <template slot-scope="{data}">
@@ -31,7 +31,7 @@
                   <vs-td v-if="tr.type_cate == null">-----</vs-td>
                   <!-- <vs-td v-if="tr.type_two != null">{{JSON.parse(tr.type_two.name)[0].content}}</vs-td>
                   <vs-td v-if="tr.type_two == null">-----</vs-td> -->
-                  <vs-td v-if="tr.brand != null">{{tr.brand.name}}</vs-td>
+                  <!-- <vs-td v-if="tr.brand != null">{{tr.brand.name}}</vs-td> -->
                   <vs-td v-if="tr.brand == null">-----</vs-td>
                   <!-- <vs-td >{{tr.qty}}</vs-td> -->
                   <vs-td >

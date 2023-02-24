@@ -64,9 +64,11 @@ class AppServiceProvider extends ServiceProvider
                 return $query;
             });
             $productBrands = ProductBrands::where('status', 1)->get();
-            $bannerAds = BannerAds::where('status',2)->get(['name','image','id']);
-            $bannerPhu = Banner::where(['status'=>2])->limit(3)->get(['id','image','link','title','description']);
-            $banners = Banner::where(['status'=>1])->get(['id','image','link','title','description']);
+            $bannerAds_tren = BannerAds::where('status',1)->limit(2)->get(['name','image','id']);
+            $bannerAds_duoi = BannerAds::where('status',2)->limit(4)->get(['name','image','id']);
+            $bannerPhu = Banner::where(['status'=>2])->limit(4)->get(['id','image','link','title','description']);//banner cứng
+            // dd($bannerPhu);
+            $banners = Banner::where(['status'=>1])->get(['id','image','link','title','description']);//banner giữ chạy slide
             $cartcontent = session()->get('cart', []);
             $viewold = session()->get('viewoldpro', []);
             $compare = session()->get('compareProduct', []);
@@ -104,7 +106,8 @@ class AppServiceProvider extends ServiceProvider
                 'hotProduct'=>$hotProduct,
                 'productBrands'=>$productBrands,
                 'helpCustomer'=>$helpCustomer,
-                'bannerAds'=>$bannerAds,
+                'bannerAds_tren'=>$bannerAds_tren,
+                'bannerAds_duoi'=>$bannerAds_duoi,
                 'partners'=>$partners,
                 'bannerPhu'=> $bannerPhu,
                 'typeCate'=> $typeCate,

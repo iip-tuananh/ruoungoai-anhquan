@@ -46,7 +46,6 @@ class CartController extends Controller
                     $billdetail->qty = $item['quantity'];
                     $billdetail->images = $item['image'];
                     $billdetail->discount = $item['discount'];
-                    $billdetail->color = $item['color'];
                     $billdetail->save();
                 }
 				DB::commit();
@@ -71,7 +70,6 @@ class CartController extends Controller
             if (isset($request->quantity)) {
                 if(isset($cart[$id])) {
                     $cart[$id]['quantity'] = $cart[$id]['quantity'] + $request->quantity;
-                    $cart[$id]['color'] = $request->color;
                     $cart[$id]['price'] = $request->price;
                 } else {
                     $cart[$id] = [
@@ -84,13 +82,12 @@ class CartController extends Controller
                         "type_slug" => $product->type_slug,
                         "slug"=>$product->slug,
                         "image" => json_decode($product->images)[0],
-                        "color" =>$request->color
+                       
                     ];
                 }
             } else {
                 if(isset($cart[$id])) {
                     $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
-                    $cart[$id]['color'] = $request->color;
                     $cart[$id]['price'] = $request->price;
                 } else {
                     $cart[$id] = [
@@ -103,7 +100,6 @@ class CartController extends Controller
                         "type_slug" => $product->type_slug,
                         "slug"=>$product->slug,
                         "image" => json_decode($product->images)[0],
-                        "color" =>$request->color
                     ];
                 }
             }
@@ -111,7 +107,6 @@ class CartController extends Controller
             if (isset($request->quantity)) {
                 if(isset($cart[$id])) {
                     $cart[$id]['quantity'] = $cart[$id]['quantity'] + $request->quantity;
-                    $cart[$id]['color'] = $request->color;
                 } else {
                     $cart[$id] = [
                         "id" => $product->id,
@@ -123,13 +118,11 @@ class CartController extends Controller
                         "type_slug" => $product->type_slug,
                         "slug"=>$product->slug,
                         "image" => json_decode($product->images)[0],
-                        "color" =>$request->color
                     ];
                 }
             } else {
                 if(isset($cart[$id])) {
                     $cart[$id]['quantity'] = $cart[$id]['quantity'] + 1;
-                    $cart[$id]['color'] = $request->color;
                 } else {
                     $cart[$id] = [
                         "id" => $product->id,
@@ -141,7 +134,6 @@ class CartController extends Controller
                         "type_slug" => $product->type_slug,
                         "slug"=>$product->slug,
                         "image" => json_decode($product->images)[0],
-                        "color" =>$request->color
                     ];
                 }
             }
@@ -151,15 +143,9 @@ class CartController extends Controller
         session()->put('cart', $cart);
         $data['cart'] = session()->get('cart',[]);
         $data['cartItemName'] = $cart[$id]['name'];
-        $view1 = view('cart.header-cart', $data)->render();
-        $view2 = view('cart.count-cart', $data)->render();
-        $view4 = view('cart.popup-cart-desktop', $data)->render();
-        $view5 = view('cart.popup-cart-mobile',$data)->render();
+        $view1 = view('cart.list-cart-ajax', $data)->render();
         return response()->json([
             'html1' => $view1,
-            'html2' => $view2,
-            'html3' => $view4,
-            'html5' => $view5
         ]);
     }
     public function update(Request $request)
@@ -170,19 +156,10 @@ class CartController extends Controller
             session()->put('cart', $cart);
             $data['cart'] = session()->get('cart',[]);
             $data['cartItemName'] = $cart[$request->id]['name'];
-            $view1 = view('cart.header-cart', $data)->render();
-            $view2 = view('cart.count-cart', $data)->render();
-            $view3 = view('cart.list-cart-ajax', $data)->render();
-            $view4 = view('cart.popup-cart-desktop', $data)->render();
-            $view5 = view('cart.popup-cart-mobile',$data)->render();
-            $view6 = view('cart.list-cart-mobile',$data)->render();
+            $view1 = view('cart.list-cart-ajax', $data)->render();
             return response()->json([
                 'html1' => $view1,
-                'html2' => $view2,
-                'html3' => $view3,
-                'html4' => $view4,
-                'html5' => $view5,
-                'html6' => $view6
+              
             ]);
         }
         
@@ -197,18 +174,9 @@ class CartController extends Controller
                 session()->put('cart', $cart);
             }
             $data['cart'] = session()->get('cart',[]);
-            $view1 = view('cart.header-cart', $data)->render();
-            $view2 = view('cart.count-cart', $data)->render();
-            $view3 = view('cart.list-cart-ajax', $data)->render();
-            $view4 = view('cart.popup-cart-desktop', $data)->render();
-            $view6 = view('cart.list-cart-mobile',$data)->render();
+            $view1 = view('cart.list-cart-ajax', $data)->render();
             return response()->json([
                 'html1' => $view1,
-                'html2' => $view2,
-                'html3' => $view3,
-                'html4' => $view4,
-                'html6' => $view6
-
             ]);
         }
     }

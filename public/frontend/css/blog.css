@@ -1,6 +1,6 @@
 /**--------------------------------------------------------
  Category **/
-.news-block .category-nav {
+ .news-block .category-nav {
   background: #4d1939;
   padding-top: 20px;
 }
@@ -83,7 +83,7 @@
   padding: 0 0 0 15px;
   height: auto;
   clear: both;
-  background: #0e1d42;
+  background: #000000;
   border-top: 1px solid #cb3f2d;
   line-height: 30px;
 }

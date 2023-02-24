@@ -75,7 +75,7 @@
                 <ImageMulti v-model="objData.images" :title="'san-pham'"/> 
               </div>
               <div class="form-group">
-                <label>Khoảng giá sản phẩm</label>
+                <label>Giá sản phẩm</label>
                 <div class="row">
                   <div class="col-md-6">
                     <vs-input
@@ -87,7 +87,7 @@
                       v-model="objData.price"
                     />
                   </div>
-                  <div class="col-md-6">
+                  <!-- <div class="col-md-6">
                     <vs-input
                       type="number"
                       size="default"
@@ -98,7 +98,7 @@
                     />
                   </div>
                 </div>
-              </div>
+              </div> -->
               <div class="form-group">
                 <label>Phần trăm giảm giá (%)</label>
                 <vs-input
@@ -175,7 +175,7 @@
                   />
                 </vs-select>
               </div> -->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label>Thương hiệu sản phẩm</label>
                 <vs-select
                   class="selectExample"
@@ -190,7 +190,7 @@
                     :key="'v' + index"
                   />
                 </vs-select>
-              </div>
+              </div> -->
               <!-- <div class="form-group">
                 <label>Thuộc combo sản phẩm</label>
                 <vs-select
@@ -207,7 +207,7 @@
                   />
                 </vs-select>
               </div> -->
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <label>Phân loại bảo hành (nếu có)</label>
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
@@ -244,8 +244,8 @@
 
                 <el-button size="small" @click="addInput('size')"
                   >Thêm bảo hành</el-button>
-              </div>
-              <div class="form-group">
+              </div> -->
+              <!-- <div class="form-group">
                 <label>Khuyến mại sản phẩm</label>
                 <div v-for="(item, i) in objData.preserve" :key="i">
                   <div class="row">
@@ -274,7 +274,7 @@
                 <el-button size="small" @click="addInput('preserve')"
                   >Thêm khuyến mại</el-button
                 >
-              </div>
+              </div> -->
               <div class="form-group">
                 <label>Sản phẩm nổi bật</label>
                 <vs-select v-model="objData.discountStatus">

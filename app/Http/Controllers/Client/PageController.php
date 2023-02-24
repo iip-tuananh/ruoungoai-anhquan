@@ -146,7 +146,7 @@ class PageController extends Controller
         $data->address = $request->address;
         $data->save();
         if($data){
-            return redirect()->back()->with('ok', 'Gửi Thành Công');
+            return redirect()->back()->with('SuccessPostContac', 'Gửi Thành Công');
         }else{
             return back()->with('error', 'Gửi tin thất bại');
         }

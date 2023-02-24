@@ -21,7 +21,7 @@ class ProductController extends Controller
     {
         $data['brands'] = ProductBrands::where('status', 1)->get();
         $data['list'] = Product::where(['status'=>1])->orderBy('id','DESC')->select('id','category','name','discount','price','price_big','images','slug','cate_slug','type_slug', 'size', 'description')
-        ->paginate(16);
+        ->paginate(9);
         $data['title'] = "Tất cả sản phẩm";
         return view('product.list',$data);
     }
@@ -31,7 +31,7 @@ class ProductController extends Controller
         $data['list'] = Product::where(['status'=>1,'cate_slug'=>$cate])
         ->orderBy('id','DESC')
         ->select('id','category','name','discount','price','price_big','images','slug','cate_slug','type_slug', 'size', 'description')
-        ->paginate(16);
+        ->paginate(9);
         $data['cateno'] = Category::where('slug',$cate)->first(['id','name','avatar','content','slug','imagehome']);
         $allBrands = ProductBrands::where('status', 1)->get();
         $listBrand = [];
@@ -54,7 +54,7 @@ class ProductController extends Controller
         $data['list'] = Product::where(['status'=>1,'cate_slug'=>$cate,'type_slug'=>$typecate])
         ->orderBy('id','DESC')
         ->select('id','category','name','discount','price','price_big','images','slug','cate_slug','type_slug','description', 'size')
-        ->paginate(16);
+        ->paginate(9);
         $data['pronew'] = Product::where('status',1)->orderBy('id','DESC')->select('id','category','name','discount','price','images','slug','cate_slug','type_slug', 'size')
         ->paginate(5);
         $data['cateno'] = TypeProduct::where(['slug'=>$typecate, 'cate_slug'=>$cate])->first(['id','name','cate_id','content', 'avatar']);
@@ -256,9 +256,8 @@ class ProductController extends Controller
             },
         ])->where(['slug'=>$slug, 'status'=>1])->first(['id','name','images','type_cate','category','sku','discount','price','price_big','content','size','description','slug','preserve','cate_slug','type_slug','status', 'brand_id']);
         $data['news'] = Blog::where(['status'=>1,'home_status'=>1])->orderby('id','desc')->limit(8)->get(['id','title','image','description','created_at','slug']);
-        $data['productlq'] = Product::where(['cate_slug'=>$cate, 'status'=>1])->get(['id','name','images','type_cate','category','sku','discount','price','content','size','description','slug','preserve','cate_slug','type_slug','status']);
+        $data['productlq'] = Product::where(['cate_slug'=>$cate, 'status'=>1])->select('id','name','images','type_cate','category','sku','discount','price','content','size','description','slug','preserve','cate_slug','type_slug','status')->paginate(6);
         $viewoldpro = session()->get('viewoldpro', []);
-
         if(isset($viewoldpro[$slug])) {
             session()->put('viewoldpro', $viewoldpro);
         } else {

@@ -19,7 +19,7 @@ class BlogController extends Controller
         $data['blogs'] = Blog::where(['status'=>1])
         ->orderBy('id','DESC')
         ->select(['id','title','image','description','updated_at','slug'])
-        ->paginate(10);
+        ->paginate(5);
         $data['news'] = Blog::where(['status'=>1, 'home_status'=>1])->orderBy('id', 'desc')->limit(10)->get(['id', 'title', 'slug', 'image']);
         $data['title_page'] = 'Tất cả tin tức';
         $data['categoryBlog'] = BlogCategory::with([

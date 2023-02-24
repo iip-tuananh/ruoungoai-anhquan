@@ -1,29 +1,114 @@
-@foreach ($list as $product)
-@php
-    $img = json_decode($product->images);
-@endphp
-<div class="col" >
-    <div class="col-inner" >
-        <a href="{{route('detailProduct', ['cate'=>$product->cate_slug, 'slug'=>$product->slug])}}" class="plain ">
-        <div class="portfolio-box box has-hover box-shade dark">
-            <div class="box-image" >
-                <div class="image-cover" style="padding-top:100%;">
-                    <img width="1200" height="671" src="{{$img[0]}}" class="attachment-medium size-medium" alt="" loading="lazy" srcset="{{$img[0]}} 1200w, {{$img[0]}} 768w" sizes="(max-width: 1200px) 100vw, 1200px" />                                
-                    <div class="shade"></div>
-                </div>
-            </div>
-            <div class="box-text text-center" >
-                <div class="box-text-inner">
-                    <h6 class="uppercase portfolio-box-title">{{languageName($product->name)}}</h6>
-                    <p class="uppercase portfolio-box-category is-xsmall op-6">
-                    <span class="show-on-hover">
-                    {{languageName($product->cate->name)}}</span>
-                    </p>
-                </div>
-            </div>
+<template>
+    <div class="row">
+      <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title" >Danh sách sản phẩm</h4>
+            <p class="card-description">Thêm mới hoặc sửa sửa sản phẩm</p>
+
+            <router-link class="nav-link" :to="{name:'createProduct'}">
+              <vs-button type="gradient" style="float:right;">Thêm mới</vs-button>
+            </router-link>
+
+            <vs-input icon="search" placeholder="Search" v-model="keyword" @keyup="searchProduct()"/>
+            <vs-table stripe :data="list" max-items="10" pagination>
+              <template slot="thead">
+                <vs-th>Ảnh sản phẩm</vs-th>
+                <vs-th>Tên sản phẩm</vs-th>
+                <vs-th>Danh mục</vs-th>
+                <!-- <vs-th>Số lượng</vs-th> -->
+                <vs-th>Hành động</vs-th>
+              </template>
+              <template slot-scope="{data}">
+                <vs-tr :key="indextr" v-for="(tr, indextr) in data">
+                  <vs-td ><vs-avatar size="large" :src="JSON.parse(tr.images)[0]"/></vs-td>
+                  <vs-td>{{JSON.parse(tr.name)[0].content}}</vs-td>
+                  <vs-td v-if="tr.cate != null">{{JSON.parse(tr.cate)[0].content}}</vs-td>
+                  <vs-td v-if="tr.cate == null">--Trống--</vs-td>
+                  <!-- <vs-td >{{tr.qty}}</vs-td> -->
+                  <vs-td >
+                    <router-link :to="{name:'edit_product',params:{id:tr.id}}">
+                      <vs-button
+                        vs-type="gradient"
+                        size="lagre"
+                        color="success"
+                        icon="edit"
+                      ></vs-button>
+                    </router-link>
+                    <vs-button vs-type="gradient" size="lagre" color="red" icon="delete_forever" @click="confirmDestroy(tr.id)"></vs-button>
+                  </vs-td>
+                </vs-tr>
+              </template>
+            </vs-table>
+          </div>
         </div>
-        </a>
+      </div>
     </div>
-</div>
-@endforeach
-{{$list->links()}}
+</template>
+
+
+<script>
+import Swal from "sweetalert2";
+import { mapActions } from "vuex";
+export default {
+  data() {
+    return {
+      list:[],
+      keyword:"",
+      objDel:{
+        id_item:"",
+        slug:"",
+      }
+      
+    };
+  },
+  components: {},
+  computed: {},
+  watch: {},
+  methods: {
+    ...mapActions(['listProduct','deleteId','loadings']),
+    listProducts(){
+      this.loadings(true);
+      this.listProduct({ keyword: this.keyword })
+      .then(response => {
+          this.loadings(false);
+          this.list = response.data;
+      }).catch(err => {
+          this.loadings(false);
+          this.list = err.data;
+      });
+    },
+    searchProduct() {
+      if (this.timer) {
+        clearTimeout(this.timer);
+        this.timer = null;
+      }
+      this.timer = setTimeout(() => {
+          this.listProduct({ keyword: this.keyword })
+          .then(response => {
+            this.list = response.data;
+          });
+      }, 800);
+    },
+    destroy(){
+      this.deleteId(this.objDel).then(response => {
+        this.listProducts();
+        this.$success('xóa thành công');
+      });
+    },
+    confirmDestroy(id,slug){
+      this.objDel.id_item = id;
+      this.$vs.dialog({
+        type:'confirm',
+        color: 'danger',
+        title: `Bạn có chắc chắn`,
+        text: 'Xóa sản phẩm này',
+        accept:this.destroy
+      })
+    }
+  },
+  mounted() {
+    this.listProducts();
+  }
+};
+</script>

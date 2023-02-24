@@ -45,7 +45,7 @@
         <link href="{{asset('frontend/css/blog.css')}}"rel="stylesheet" media="bogus"/>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 		@yield('css')
- 
+
         <style type="text/css">
             img.wp-smiley,
             img.emoji {
@@ -75,9 +75,29 @@
         <script type='text/javascript' src='{{asset('frontend/js/jquery.min.js')}}' id='jquery-core-js'></script>
         <script type='text/javascript' src='{{asset('frontend/js/jquery-migrate.min.js')}}' id='jquery-migrate-js'></script>
         <script type='text/javascript' src='{{asset('frontend/js/js.cookie.js')}}' id='age-verification-cookie-js'></script>
+        <input type="hidden" name="imgLogo" value="{{ url('' . $setting->logo) }}">
         <script type='text/javascript' id='dispensary-age-verification-js-extra'>
             /* <![CDATA[ */
-            var object_name = {"bgImage":"","minAge":"18","imgLogo":"https:\/\/maltco.asia\/wp-content\/uploads\/2022\/10\/Main_01.png","title":"","copy":"Website kh\u00f4ng d\u00e0nh cho ng\u01b0\u1eddi d\u01b0\u1edbi 18 tu\u1ed5i.\nQu\u00fd kh\u00e1ch vui l\u00f2ng cung c\u1ea5p th\u00f4ng tin:","btnYes":"\u0110\u1ee7 18 tu\u1ed5i","btnNo":"Ch\u01b0a \u0111\u1ee7 18 tu\u1ed5i","successTitle":"Success!","successText":"You are now being redirected back to the site ...","successMessage":"","failTitle":"Sorry!","failText":"You are not old enough to view the site ...","messageTime":"","redirectOnFail":"","beforeContent":"","afterContent":""};
+            var imgLogo = $('input[name="imgLogo]').val();
+            var object_name = {
+            bgImage: "",
+            minAge: "18",
+            imgLogo: imgLogo,
+            title: "",
+            copy:
+                "Website kh\u00f4ng d\u00e0nh cho ng\u01b0\u1eddi d\u01b0\u1edbi 18 tu\u1ed5i.\nQu\u00fd kh\u00e1ch vui l\u00f2ng cung c\u1ea5p th\u00f4ng tin:",
+            btnYes: "\u0110\u1ee7 18 tu\u1ed5i",
+            btnNo: "Ch\u01b0a \u0111\u1ee7 18 tu\u1ed5i",
+            successTitle: "Success!",
+            successText: "You are now being redirected back to the site ...",
+            successMessage: "",
+            failTitle: "Sorry!",
+            failText: "You are not old enough to view the site ...",
+            messageTime: "",
+            redirectOnFail: "",
+            beforeContent: "",
+            afterContent: ""
+        };
             /* ]]> */
         </script>
         <script type='text/javascript' src='{{asset('frontend/js/dispensary-age-verification-public.js')}}' id='dispensary-age-verification-js'></script>

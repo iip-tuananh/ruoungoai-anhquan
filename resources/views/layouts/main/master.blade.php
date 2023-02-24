@@ -75,10 +75,10 @@
         <script type='text/javascript' src='{{asset('frontend/js/jquery.min.js')}}' id='jquery-core-js'></script>
         <script type='text/javascript' src='{{asset('frontend/js/jquery-migrate.min.js')}}' id='jquery-migrate-js'></script>
         <script type='text/javascript' src='{{asset('frontend/js/js.cookie.js')}}' id='age-verification-cookie-js'></script>
-        <input type="hidden" name="imgLogo" value="{{ url('' . $setting->logo) }}">
+        <input type="hidden" name="imgLogo" id ="logoimg" value="{{ url('' . $setting->logo) }}">
         <script type='text/javascript' id='dispensary-age-verification-js-extra'>
             /* <![CDATA[ */
-            var imgLogo = $('input[name="imgLogo]').val();
+            var imgLogo = document.getElementById('logoimg').val();
             var object_name = {
             bgImage: "",
             minAge: "18",

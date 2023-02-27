@@ -120,7 +120,7 @@
                                         $giagiam = $pro['price'] - ($pro['price'] * $pro['discount']) / 100;
                                     @endphp
                                     <li>
-                                        <div class="inner">
+                                        <div class="inner" style="border-radius:10px">
                                             @if ($pro->discount > 0)
                                                 <div class="triangle-top-right"></div>
                                                 <div class="nd-sale">- {{ $pro->discount }}%</div>
@@ -188,7 +188,7 @@
                     </div>
                 </div>
             @else
-                <div class="trending-block clearfix bg-web">
+                <div class="trending-block clearfix ">
                     <div class="container-md">
                         <div class="clearfix">
                             <div class="head-block clearfix">
@@ -203,7 +203,7 @@
                                         $giagiam = $pro['price'] - ($pro['price'] * $pro['discount']) / 100;
                                     @endphp
                                     <li>
-                                        <div class="inner">
+                                        <div class="inner" style="border-radius:10px">
                                             @if ($pro->discount > 0)
                                                 <div class="triangle-top-right"></div>
                                                 <div class="nd-sale">- {{ $pro->discount }}%</div>

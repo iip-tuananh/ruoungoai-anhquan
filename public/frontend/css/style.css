@@ -1258,9 +1258,10 @@ div.wpcf7 .ajax-loader {
 }
 
 .widget_shopping_cart .shopping_box {
-    background-color: #0e1d42;
+    background-color: #000000;
     color: #fff;
     padding: 15px 10px;
+    border-radius: 10px;
 }
 
 .widget_shopping_cart .shopping_box .phone, .widget_shopping_cart .shopping_box .open {
@@ -1544,7 +1545,7 @@ div.wpcf7 .ajax-loader {
     display: block;
     padding: 10px;
     text-align: center;
-    background: #0e1d42;
+    background: #000000;
     color: #fff;
     border-radius: 6px;
 }

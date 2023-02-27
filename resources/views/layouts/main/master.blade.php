@@ -121,6 +121,9 @@
         <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet"/>
     </head>
     <body data-rsssl=1 class="home blog theme-gv-whisky woocommerce-no-js">
+        <div class="zalo-cus">
+            <a href="http://zalo.me/{{$setting->phone1}}"><img src="{{asset('frontend/images/zalo-icon.png')}}" alt="" srcset=""></a>
+        </div>
         <div class="gv_popup_age" style="display: none">
             <div class="box_inner">
                 <div class="box_content">

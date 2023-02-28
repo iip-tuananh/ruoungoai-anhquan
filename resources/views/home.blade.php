@@ -100,8 +100,7 @@
             </div>
         </div>
     </div>
-    <!-- Discover -->
-    <!-- Filter -->
+
     @foreach ($categoryProduct as $key => $cate)
         @if (count($cate->Product) > 0)
             @if ($key % 2 != 0)
@@ -309,7 +308,6 @@
             </div>
         </div>
     </div>
-    <br>
-    <br>
+
     </div>
 @endsection

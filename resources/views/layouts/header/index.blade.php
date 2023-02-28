@@ -3,7 +3,7 @@
     <div class="inner">
         <div class="menu-header">
             <button class="btn-close" type="button">
-            <i class="ti-close"></i> Close
+                <i class="fa-solid fa-rectangle-xmark"></i>
             </button>
         </div>
         <div class="menu-mobile">
@@ -41,22 +41,22 @@
                 <div class="header-panel">
                     <ul class="top-nav">
                         <li class="hidden-lg">
-                            <a role="button" class="btn-toggle"><i class="ri-hamburger"></i>Menu</a>
+                            <a role="button" class="btn-toggle"><i class="fa-solid fa-bars"></i>Menu</a>
                         </li>
                         <li class="hidden-md">
-                            <a role="button" class="btn-search"><i class="ri-search"></i>Search</a>
+                            <a role="button" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
                         </li>
                         <li>
-                            <a href="{{route('home')}}"><i class="ri-home"></i>Trang chủ</a>
+                            <a href="{{route('home')}}"><i class="fa-solid fa-house"></i>Trang chủ</a>
                         </li>
                         <li>
-                            <a href="{{route('aboutUs')}}"><i class="ri-earth"></i>Giới thiệu</a>
+                            <a href="{{route('aboutUs')}}"><i class="fa-solid fa-user-tie"></i>Giới thiệu</a>
                         </li>
                         <li>
-                            <a href="{{route('lienHe')}}"><i class="linecon-shop"></i>Liên Hệ</a>
+                            <a href="{{route('lienHe')}}"><i class="fa-solid fa-phone-volume"></i>Liên Hệ</a>
                         </li>
                         <li>
-                            <a class="head_cart_box" href="{{route('checkout')}}"><i class="fa fa-shopping-basket"></i>Giỏ hàng
+                            <a class="head_cart_box" href="{{route('checkout')}}"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng
                             (<span id="head_count">0</span>)
                             </a>
                         </li>

@@ -593,7 +593,8 @@
 }
 
 .product-block .filter-block {
-    padding-top: 15px
+    padding-top: 15px;
+    background-color: #f0f0f0;
 }
 
 .product-block .filter-block .box--filter .container-md .filter-item .inner {

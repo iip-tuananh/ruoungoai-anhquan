@@ -293,6 +293,31 @@
                 },
                     });
                   </script>
+                      <script>
+                        $('#filter-price').change(function (e) { 
+                            e.preventDefault();
+                            var price = $(this).val();
+                            var url = $(this).data('url');
+                            var cate = $('input[name="cate-id"]').val();
+                            var type = $('input[name=type-id]').val();
+                            console.log(cate,type);
+                            $.ajax({
+                                type: "post",
+                                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                url: url,
+                                data: {
+                                    price: price,
+                                    cate :cate,
+                                    type:type,
+                                },
+                                success: function (data) {
+                                    $('.form-filer').html(data.html7);
+                                }
+                            });
+                       
+                        });
+                        
+                     </script>
          
           
 </html>

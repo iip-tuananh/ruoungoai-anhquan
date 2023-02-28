@@ -71,15 +71,22 @@ Danh sách {{$title}}
                   <div class="col-md-4 filter-item">
                      <div class="inner">
                         <label>Khoảng giá</label>
-                        <select class="price prod_price" name="price">
+                        @if(isset($cate_id))
+                        <input type="hidden" name="cate-id" value="{{$cate_id}}">
+                        @endif
+                        @if(isset($type_id))
+                        <input type="hidden" name="type-id" value="{{$type_id}}">
+                        @endif
+                        <select id="filter-price" class="price prod_price" name="price-filer" data-url="{{route('filterProduct')}}" >
                            <option value="null">-- Tất cả --</option>
                            <option value="0-100">0 - 100.000</option>
                            <option value="100-200">100.000 - 200.000</option>
                            <option value="200-500">200.000 - 500.000</option>
                            <option value="500-1000">500.000 - 1.000.000</option>
                            <option value="1000-2000">1.000.000 - 2.000.000</option>
-                           <option value="2000-9999">Trên 2.000.000</option>
+                           <option value=">2000">Trên 2.000.000</option>
                         </select>
+                    
                      </div>
                   </div>
                </div>
@@ -96,7 +103,7 @@ Danh sách {{$title}}
                               <h3 class="title-block"><span>{{$title}}</span></h3>
                           </div>
                       </div>
-                      <div class="clearfix trend--grid">
+                      <div class="clearfix trend--grid form-filer">
                           <ul class="trend--prod">
                               @foreach ($list as $pro)
                                   @php

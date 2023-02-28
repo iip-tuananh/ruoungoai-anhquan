@@ -128,7 +128,7 @@
             <div class="box_inner">
                 <div class="box_content">
                     <div class="logo">
-                        <img src="https://maltco.asia/wp-content/uploads/2019/11/logo-final-Main-02.png"/>
+                        <img src="{{$setting->logo}}"/>
                     </div>
                     <div class="head">
                         <h2>Bạn có trên 18 tuổi không?</h2>

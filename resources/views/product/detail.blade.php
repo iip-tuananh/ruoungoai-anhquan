@@ -27,7 +27,7 @@ $promotion =  json_decode($product->preserve);
     <div class="breadcrumb-nav">
         <div class="container-md clearfix">
             <nav class="woocommerce-breadcrumb">
-                <a class="home" href="https://maltco.asia"><i class="home ti-home"></i>Trang chủ<i class="delimiter ti-angle-right"></i></a>
+                <a class="home" href="{{route('home')}}"><i class="home ti-home"></i>Trang chủ<i class="delimiter ti-angle-right"></i></a>
                 <a href="{{route('allListProCate',['cate'=>$product->cate_slug])}}">{{languageName($product->cate->name)}}<i class="delimiter ti-angle-right"></i></a>
                 <span>{{languageName($product->name)}}</span>
             </nav>

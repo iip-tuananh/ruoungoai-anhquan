@@ -17,7 +17,7 @@ Danh sách {{$title}}
 <div id="primary" class="product-area">
    <div class="breadcrumb-nav">
       <div class="container-md clearfix">
-         <nav class="woocommerce-breadcrumb"><a class="home" href="https://maltco.asia"><i class="home ti-home"></i>Trang chủ<i class="delimiter ti-angle-right"></i></a><span>{{$title}}</span></nav>
+         <nav class="woocommerce-breadcrumb"><a class="home" href="{{route('home')}}"><i class="home ti-home"></i>Trang chủ<i class="delimiter ti-angle-right"></i></a><span>{{$title}}</span></nav>
       </div>
       <!-- end breadcrumb product -->
    </div>
@@ -25,8 +25,8 @@ Danh sách {{$title}}
    <div class="product-block">
       <div class="gv_product_heading">
          <div class="arc-image">
-            <img src="https://maltco.asia/wp-content/uploads/2021/07/Scotch-Whisky-PC-malt-co-web.jpg" class="desktop"/>
-            <img src="https://maltco.asia/wp-content/uploads/2021/07/Scotch-Whisky-mobile-malt-co-web.jpg" class="mobile"/>
+            <img src="{{asset('frontend/images/Scotch-Whisky-PC-malt-co-web.jpg')}}" class="desktop"/>
+            <img src="{{asset('frontend/images/Scotch-Whisky-mobile-malt-co-web.jpg')}}" class="mobile"/>
          </div>
          <div class="arc-info">
             <div class="container-md">
@@ -160,9 +160,6 @@ Danh sách {{$title}}
                                   </li>
                               @endforeach
                           </ul>
-                      </div>
-                      <div class="load_content" style="display:none">
-                          <img src="https://maltco.asia/wp-content/themes/gv-whisky/images/waiting.gif" />
                       </div>
                       <div class="clearfix text-center">
                         <div class="pagenav">

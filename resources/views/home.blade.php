@@ -177,14 +177,6 @@
                                 @endforeach
                             </ul>
                         </div>
-                        <div class="load_content" style="display:none">
-                            <img src="https://maltco.asia/wp-content/themes/gv-whisky/images/waiting.gif" />
-                        </div>
-                        <div class="clearfix text-center">
-                            <a role="button" class="btn-loadmore load-more-trending" data-offset="4" data-show="4">
-                                Xem thêm<i class="ri-chevron-right"></i>
-                            </a>
-                        </div>
                     </div>
                 </div>
             @else
@@ -259,14 +251,6 @@
                                     </li>
                                 @endforeach
                             </ul>
-                        </div>
-                        <div class="load_content" style="display:none">
-                            <img src="https://maltco.asia/wp-content/themes/gv-whisky/images/waiting.gif" />
-                        </div>
-                        <div class="clearfix text-center">
-                            <a role="button" class="btn-loadmore load-more-trending" data-offset="4" data-show="4">
-                                Xem thêm<i class="ri-chevron-right"></i>
-                            </a>
                         </div>
                     </div>
                 </div>

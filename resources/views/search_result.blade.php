@@ -19,7 +19,7 @@ Kết quả tìm kiếm
 <div id="primary" class="product-area">
 	<div class="breadcrumb-nav">
 	   <div class="container-md clearfix">
-		  <nav class="woocommerce-breadcrumb"><a class="home" href="https://maltco.asia"><i class="home ti-home"></i>Trang chủ<i class="delimiter ti-angle-right"></i></a><span>Kết quả tìm kiếm</span></nav>
+		  <nav class="woocommerce-breadcrumb"><a class="home" href="{{route('home')}}"><i class="home ti-home"></i>Trang chủ<i class="delimiter ti-angle-right"></i></a><span>Kết quả tìm kiếm</span></nav>
 	   </div>
 	   <!-- end breadcrumb product -->
 	</div>
@@ -139,9 +139,6 @@ Kết quả tìm kiếm
 					   @else
 						không tìm thấy sản phẩm nào với từ khoá "{{$keyword}}"
 					   @endif
-					   <div class="load_content" style="display:none">
-						   <img src="https://maltco.asia/wp-content/themes/gv-whisky/images/waiting.gif" />
-					   </div>
 					
 				   </div>
 			   </div>

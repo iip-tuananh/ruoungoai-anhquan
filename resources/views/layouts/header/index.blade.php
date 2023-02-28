@@ -117,7 +117,7 @@
 <div class="free-ship">
     <div class="container-md">
         <div class="inner">
-            <img src="https://maltco.asia/wp-content/themes/gv-whisky/images/trustbar--delivery.png"/>
+            <img src="{{asset('frontend/images/trustbar--delivery.png')}}"/>
             <p><span>Miễn phí giao hàng trong nội thành Hà Nội</span>trong vòng 60 phút</p>
         </div>
     </div>

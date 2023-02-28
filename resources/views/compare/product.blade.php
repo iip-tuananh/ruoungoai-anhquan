@@ -20,7 +20,7 @@ Chức năng so sánh sản phẩm thông minh chỉ có tại icongnghe
    <div class="container">
       <ul class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
          <li class="home" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="/" title="Trang chủ">
+            <a itemprop="item" href="{{route('home')}}" title="Trang chủ">
                <span itemprop="name">Trang chủ</span>
                <meta itemprop="position" content="1">
             </a>

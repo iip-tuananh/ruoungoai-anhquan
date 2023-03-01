@@ -219,8 +219,8 @@ $promotion =  json_decode($product->preserve);
                                     {{ number_format($pro['price']) }}đ
                                     </span>
                                     <br>
-                                    <button class="bt_add_cart " data-id="11284">
-                                    <i class="fa fa-shopping-basket"></i>
+                                    <button class="bt_add_cart " data-id="{{$pro['id']}}" data-url="{{route('addToCart')}}">
+                                        <i class="fa fa-shopping-basket"></i>
                                     </button>
                                 </div>
                                 @else

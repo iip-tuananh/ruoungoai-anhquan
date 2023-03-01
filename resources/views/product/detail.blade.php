@@ -123,7 +123,7 @@ $promotion =  json_decode($product->preserve);
                                 </div>
                                 <div class="book-buy variant">
                                     @if($product->price > 0 )
-                                    <button class="bt_add_cart " data-id="{{$pro['id']}}" data-url="{{route('addToCart')}}">
+                                    <button class="bt_add_cart " data-id="{{$product['id']}}" data-url="{{route('addToCart')}}">
                                         <i class="fa fa-shopping-basket"></i>
                                     </button>
                                     @endif

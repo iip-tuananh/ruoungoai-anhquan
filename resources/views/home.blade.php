@@ -95,7 +95,7 @@
                     <div class="col-item special-col">
                         <div class="item-mansory">
                             <div class="inner">
-                                <div class="swiper mySwiper">
+                                <div class="swiper mySwiperbanner">
                                     <div class="swiper-wrapper">
                                         @foreach ($banners as $item)
                                             <div class="swiper-slide">

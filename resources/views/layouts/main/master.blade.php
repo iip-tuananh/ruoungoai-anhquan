@@ -245,13 +245,22 @@
         );
 </script>
 @endif
-
-
 		<script>
 			var swiper = new Swiper(".mySwiper", {
 			  pagination: {
 				el: ".swiper-pagination",
 			  },
+			});
+		  </script>
+          <script>
+			var swiper = new Swiper(".mySwiperbanner", {
+			  pagination: {
+				el: ".swiper-pagination",
+			  },
+              autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+             },
 			});
 		  </script>
 		    <script>

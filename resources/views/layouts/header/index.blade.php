@@ -66,13 +66,13 @@
                    <li class="hidden-lg">
                       <a role="button" class="btn-toggle"><i class="fa-solid fa-bars"></i>Menu</a>
                    </li>
-                   <li class="hidden-md">
+                   <li class="hidden-md hidden-xs">
                       <a role="button" class="btn-search"><i class="fa-solid fa-magnifying-glass"></i>Search</a>
                    </li>
                    <li class="hidden-lg hidden-md">
                       <a href="{{route('home')}}"><i class="fa-solid fa-house"></i>Trang chủ</a>
                    </li>
-                   <li class="hidden-lg hidden-md">
+                   <li class="hidden-lg hidden-md hidden-xs">
                       <a href="{{route('aboutUs')}}"><i class="fa-solid fa-user-tie"></i>Giới thiệu</a>
                    </li>
                    <li class="hidden-lg hidden-md">
@@ -80,11 +80,11 @@
                    </li>
                    <li class="hidden-lg hidden-md">
                       <a class="head_cart_box" href="{{route('checkout')}}"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng
-                      (<span id="head_count">0</span>)
+                   
                       </a>
                    </li>
                 </ul>
-                <div class="header-search">
+                <div class="header-search" style="display:block">
                    <form role="search" method="post" class="search-form" id="searchform" action="{{route('search_result')}}">
                       @csrf
                       <fieldset>

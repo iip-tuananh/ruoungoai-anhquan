@@ -17,7 +17,7 @@
     <div class="banner-home">
         <div class="banner-grid">
             <div class="container-md">
-                <div class="grid--box">
+                {{-- <div class="grid--box">
                     <div class="col-item">
                         @foreach ($bannerPhu as $key => $item)
                             @if ($key < 2)
@@ -30,7 +30,7 @@
                                 </div>
                             @endif
                         @endforeach
-                    </div>
+                    </div> --}}
                     <div class="col-item special-col">
                         <div class="item-mansory">
                             <div class="inner">
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-item">
+                    {{-- <div class="col-item">
                         @foreach ($bannerPhu as $key => $item)
                             @if ($key >= 2 && $key < 4)
                                 <div class="item-mansory">
@@ -61,7 +61,7 @@
                                 </div>
                             @endif
                         @endforeach
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

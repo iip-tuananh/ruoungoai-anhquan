@@ -36,7 +36,7 @@
 			<div class="logo logo--left ">
 				<h1 class="shop__name">
 					<a href="{{ route('home') }}">
-					Innovac
+						<img src="{{$setting->logo}}" alt="" srcset="" style="width:100px" height="100px">
 					</a>
 				</h1>
 			</div>

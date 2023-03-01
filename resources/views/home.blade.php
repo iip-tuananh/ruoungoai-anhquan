@@ -99,7 +99,7 @@
                                     <div class="swiper-wrapper">
                                         @foreach ($banners as $item)
                                             <div class="swiper-slide">
-                                                <a href="">
+                                                <a href="{{$item->name}}">
                                                     <img src="{{ $item->image }}" alt="" srcset="">
                                                 </a>
                                             </div>
@@ -140,7 +140,7 @@
                     @foreach ($bannerAds_tren as $item)
                         <div class="item-hght">
                             <div class="inner">
-                                <a href="{{ $item->link }}">
+                                <a href="{{ $item->name }}">
                                     <img src="{{ $item->image }}" />
                                 </a>
                             </div>
@@ -151,7 +151,7 @@
                     @foreach ($bannerAds_duoi as $item)
                         <div class="item-hght">
                             <div class="inner">
-                                <a href="{{ $item->link }}">
+                                <a href="{{ $item->name}}">
                                     <img src="{{ $item->image }}" />
                                 </a>
                             </div>

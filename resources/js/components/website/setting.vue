@@ -24,7 +24,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label>Văn phòng đại diện</label>
+                  <label>Địa chỉ</label>
                   <vs-input
                     type="text"
                     size="default"
@@ -32,7 +32,7 @@
                     v-model="objData.address1"
                   />
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Địa chỉ</label>
                   <vs-input
                     type="text"
@@ -40,9 +40,9 @@
                     class="w-100"
                     v-model="objData.address2"
                   />
-                </div>
+                </div> -->
                 <div class="form-group">
-                  <label>Số hotline Hà Nội</label>
+                  <label>Số điện thoại</label>
                   <vs-input
                     type="text"
                     size="default"
@@ -50,7 +50,7 @@
                     v-model="objData.phone1"
                   />
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Số hotline TP.HCM</label>
                   <vs-input
                     type="text"
@@ -67,7 +67,7 @@
                     class="w-100"
                     v-model="objData.phone3"
                   />
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Mã số thuế</label>
                   <vs-input
@@ -95,7 +95,7 @@
                     v-model="objData.facebook"
                   />
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label>Chat messenger</label>
                   <vs-input
                     type="text"
@@ -103,8 +103,8 @@
                     class="w-100"
                     v-model="objData.google"
                   />
-                </div>
-                <div class="form-group">
+                </div> -->
+                <!-- <div class="form-group">
                   <label>Instagram</label>
                   <vs-input
                     type="text"
@@ -112,8 +112,8 @@
                     class="w-100"
                     v-model="objData.GA"
                   />
-                </div>
-                <div class="form-group">
+                </div> -->
+                <!-- <div class="form-group">
                   <label>Youtube</label>
                   <vs-input
                     type="text"
@@ -121,7 +121,7 @@
                     class="w-100"
                     v-model="objData.fbPixel"
                   />
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label>Iframe GG map</label>
                   <vs-input

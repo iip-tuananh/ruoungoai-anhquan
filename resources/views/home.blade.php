@@ -13,7 +13,68 @@
 @section('js')
 @endsection
 @section('content')
-
+<style>
+    .swiper {
+        width: 100%;
+        height: 100%;
+      }
+  
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .swiper {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+      }
+  
+      .mySwiper2detail {
+        height: 80%;
+        width: 100%;
+      }
+  
+      .mySwiperdetail {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+      }
+  
+      .mySwiperdetail .swiper-slide {
+        width: 25%;
+        height: 100%;
+        opacity: 0.4;
+      }
+  
+      .mySwiperdetail .swiper-slide-thumb-active {
+        opacity: 1;
+      }
+  
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  <style>
     <div class="banner-home">
         <div class="banner-grid">
             <div class="container-md">

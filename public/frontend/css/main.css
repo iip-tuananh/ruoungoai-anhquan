@@ -1,8 +1,5 @@
-/**--------------------------------------------------------
- Title **/
 
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
  .head-block .title-block {
   margin: 0;
   position: relative;
@@ -20,7 +17,6 @@
   padding-top: 18px;
 }
 .head-block .title-block::after {
-  
   content: "";
   height: 1px;
   width: 100%;

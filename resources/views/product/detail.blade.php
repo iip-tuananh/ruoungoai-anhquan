@@ -123,8 +123,8 @@ $promotion =  json_decode($product->preserve);
                                 </div>
                                 <div class="book-buy variant">
                                     @if($product->price > 0 )
-                                    <button class="bt_add_cart" data-id="{{$product->id}}" data-url="{{route('addToCart')}}">
-                                    <i class="fa fa-shopping-basket"></i> Thêm vào giỏ hàng
+                                    <button class="bt_add_cart " data-id="{{$pro['id']}}" data-url="{{route('addToCart')}}">
+                                        <i class="fa fa-shopping-basket"></i>
                                     </button>
                                     @endif
                                 </div>
@@ -209,8 +209,8 @@ $promotion =  json_decode($product->preserve);
                                         style="color: rgba(65, 64, 64, 0.678)">{{ number_format($pro['price']) }}đ</del>
                                     </span>
                                     <br>
-                                    <button class="bt_add_cart " data-id="11284">
-                                    <i class="fa fa-shopping-basket"></i>
+                                    <button class="bt_add_cart " data-id="{{$pro['id']}}" data-url="{{route('addToCart')}}">
+                                        <i class="fa fa-shopping-basket"></i>
                                     </button>
                                 </div>
                                 @elseif($pro['price'] > 0 && $pro['discount'] == 0)

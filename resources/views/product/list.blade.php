@@ -69,7 +69,7 @@ Danh sách {{$title}}
             <div class="container-md">
                <div class="row">
                   <div class="col-md-4 filter-item">
-                     <div class="inner">
+                     <div class="inner chovao">
                         <label>Khoảng giá</label>
                         @if(isset($cate_id))
                         <input type="hidden" name="cate-id" value="{{$cate_id}}">

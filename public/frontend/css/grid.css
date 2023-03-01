@@ -16,15 +16,15 @@
   width: 100%;
   max-width: 990px;
   margin: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* padding-left: 15px; */
+  /* padding-right: 15px; */
 }
 .container-lg {
   width: 100%;
   max-width: 1170px;
   margin: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* padding-left: 15px; */
+  /* padding-right: 15px; */
 }
 .container-gv {
   width: 100%;

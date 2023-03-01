@@ -3082,6 +3082,10 @@ width: 300px !important;
 .bdb{
   border-bottom: 1px solid #c2976a;
 }
+.chovao{
+  /* background-color: red; */
+  padding: 16px 15px !important;
+}
 @media only screen and (max-width: 768px){
   .bdb{
     display: none;

@@ -598,7 +598,7 @@
 }
 
 .product-block .filter-block .box--filter .container-md .filter-item .inner {
-    padding: 7px 0
+    padding: 9px 0px;
 }
 
 .product-block .filter-block .box--filter .container-md .filter-item .inner label {
@@ -615,7 +615,7 @@
     line-height: 20px;
     font-weight: normal;
     width: 100%;
-    padding: 9px;
+    padding: 12px;
     font-family: 'Lato', arial, sans-serif
 }
 

@@ -66,8 +66,6 @@
     <!-- content-wrapper ends -->
   </div>
 </template>
-
-
 <script>
 import { mapActions } from "vuex";
 import { required } from "vuelidate/lib/validators";

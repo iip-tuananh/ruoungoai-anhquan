@@ -149,7 +149,6 @@
         @include('layouts.footer.index')                                
         <div class="add-to-cart-animation"></div>
         <div class="mc-call-phone">
-            @dd($setting->phone1);
             <a href="tel:+{{$setting->phone1}}">
             <img src="{{asset('frontend/images/icon-call.png')}}"/>
             </a>

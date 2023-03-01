@@ -1,11 +1,14 @@
 /**--------------------------------------------------------
  Title **/
+
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
  .head-block .title-block {
   margin: 0;
   position: relative;
   overflow: hidden;
   font-weight: 400;
-  font-family: 'Cinzel', 'Lato', arial, sans-serif;
+  font-family: 'Noto Serif', serif;
   font-size: 1.7em;
   letter-spacing: 2px;
   line-height: 1.2;

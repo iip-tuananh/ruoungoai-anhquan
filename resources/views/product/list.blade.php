@@ -25,8 +25,8 @@ Danh sách {{$title}}
    <div class="product-block">
       <div class="gv_product_heading">
          <div class="arc-image">
-            <img src="{{asset('frontend/images/Scotch-Whisky-PC-malt-co-web.jpg')}}" class="desktop"/>
-            <img src="{{asset('frontend/images/Scotch-Whisky-mobile-malt-co-web.jpg')}}" class="mobile"/>
+            <img src="{{asset('frontend/images/nen.jpg')}}" class="desktop"/>
+            <img src="{{asset('frontend/images/nen.jpg')}}" class="mobile"/>
          </div>
          <div class="arc-info">
             <div class="container-md">
@@ -111,7 +111,7 @@ Danh sách {{$title}}
                                       $giagiam = $pro['price'] - ($pro['price'] * $pro['discount']) / 100;
                                   @endphp
                                   <li>
-                                      <div class="inner ">
+                                      <div class="inner " style="border-radius: 10px">
                                           @if ($pro->discount > 0)
                                               <div class="triangle-top-right"></div>
                                               <div class="nd-sale">- {{ $pro->discount }}%</div>

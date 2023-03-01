@@ -74,7 +74,7 @@
         object-fit: cover;
       }
     </style>
-  <style>
+
     <div class="banner-home">
         <div class="banner-grid">
             <div class="container-md">

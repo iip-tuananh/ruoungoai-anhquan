@@ -69,6 +69,9 @@
         <link rel='stylesheet' id='woocommerce-layout-css'  href='{{asset('frontend/css/woocommerce-layout.css')}}' type='text/css' media='all' />
         <link rel='stylesheet' id='woocommerce-smallscreen-css'  href='{{asset('frontend/css/woocommerce-smallscreen.css')}}' type='text/css' media='only screen and (max-width: 768px)' />
         <link rel='stylesheet' id='woocommerce-general-css'  href='{{asset('frontend/css/woocommerce.css')}}' type='text/css' media='all' />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+          </style>
         <style id='woocommerce-inline-inline-css' type='text/css'>
             .woocommerce form .form-row .required { visibility: visible; }
         </style>

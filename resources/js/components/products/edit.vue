@@ -204,13 +204,13 @@
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
                     <div class="col-md-6">
-                      <vs-input
+                      <!-- <vs-input
                         type="text"
                         size="default"
                         :placeholder="'Nội dung ' + index"
                         class="w-100"
                         v-model="objData.size[index].title"
-                      />
+                      /> -->
                       <vs-input
                         type="text"
                         size="default"

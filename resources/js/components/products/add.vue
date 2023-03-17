@@ -222,11 +222,13 @@
                     </div>
                     <div class="col-md-4">
                       <image-upload
-                        type="image"
+                        type="avatar"
                         size="default"
+                        placeholder="Hình ảnh"
                         class="w-100"
-                        :title="'anh-danhgia'"
                         v-model="objData.size[index].price"
+                        :title="'anh-danh-gia'"
+                 
                       />
                       <br />
                     </div>

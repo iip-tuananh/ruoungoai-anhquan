@@ -208,14 +208,14 @@
                 </vs-select>
               </div> -->
               <div class="form-group">
-                <label>Phân loại bảo hành (nếu có)</label>
+                <label>Thêm đánh giá (nếu có)</label>
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
-                    <!-- <div class="col-md-6">
+                    <div class="col-md-6">
                       <vs-input
                         type="text"
                         size="default"
-                        :placeholder="'Bảo hành ' + index"
+                        :placeholder="'nội dung ' + index"
                         class="w-100"
                         v-model="objData.size[index].title"
                       />
@@ -229,7 +229,7 @@
                         v-model="objData.size[index].price"
                       />
                       <br />
-                    </div> -->
+                    </div>
                     <div class="col-md-2">
                       <a
                         href="javascript:;"

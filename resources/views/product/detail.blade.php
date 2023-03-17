@@ -76,7 +76,7 @@ $promotion =  json_decode($product->preserve);
                                         </div>
                                         <div class="tab-pane fade" id="danhgianew-tab" role="tabpanel" aria-labelledby="danhgianew-tab">
                                             <ul class="param">
-                                                @if(count($sedding)>0)
+                                                @if(count($seeding)>0)
                                                 @foreach ($seeding as $item)
                                             
                                                     <li>
@@ -178,7 +178,7 @@ $promotion =  json_decode($product->preserve);
                             </div>
                             <div class="tab-pane fade" id="danhgia-tab" role="tabpanel" aria-labelledby="danhgia-tab">
                                 <ul class="param">
-                                    @if(count($sedding)>0)
+                                    @if(count($seeding)>0)
                                     @foreach ($seeding as $item)
                                 
                                         <li>

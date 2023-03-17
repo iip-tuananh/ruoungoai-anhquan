@@ -241,7 +241,6 @@
                     </div>
                   </div>
                 </div>
-
                 <el-button size="small" @click="addInput('size')"
                   >Thêm bảo hành</el-button>
               </div>

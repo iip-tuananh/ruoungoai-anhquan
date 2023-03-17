@@ -211,6 +211,13 @@
                         class="w-100"
                         v-model="objData.size[index].title"
                       />
+                      <vs-input
+                        type="text"
+                        size="default"
+                        :placeholder="'Nội dung ' + index"
+                        class="w-100"
+                        v-model="objData.size[index].name"
+                      />
                     </div>
                     <div class="col-md-4">
                       <image-upload
@@ -324,7 +331,8 @@ export default {
         size: [
           {
             title: "",
-            price: ""
+            price: "",
+            name:"",
           },
         ],
         price: 0,
@@ -458,7 +466,7 @@ export default {
           this.objData.description = JSON.parse(response.data.description);
           this.objData.name = JSON.parse(response.data.name);
           if(response.data.size == ""){
-            this.objData.size = [{title: "",price: ""}]
+            this.objData.size = [{title: "",price: "",name: ""}]
           }else{
             this.objData.size = JSON.parse(response.data.size);
           }
@@ -502,6 +510,7 @@ export default {
         if(key =='size'){
           oj.title = "";
           oj.price = "";
+          oj.name = "";
           this.objData.size.push(oj);
         }
         if(key =='preserve'){

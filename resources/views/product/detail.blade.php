@@ -76,7 +76,6 @@ $promotion =  json_decode($product->preserve);
                                         </div>
                                         <div class="tab-pane fade" id="danhgianew-tab" role="tabpanel" aria-labelledby="danhgianew-tab">
                                             <ul class="param">
-                                           
                                                 @if($seeding != '')
                                                 @foreach ($seeding as $item)
                                                 @if($item->title != null && $item->price != null)

@@ -10,7 +10,7 @@ $discountPrice = $product->price - ($product->price * ($product->discount / 100)
 @section('image')
 @php
 $imgs = json_decode($product->images);
-$color = json_decode($product->size);
+$seeding = json_decode($product->size);
 $promotion =  json_decode($product->preserve);
 @endphp
 {{url(''.$imgs[0])}}
@@ -56,6 +56,9 @@ $promotion =  json_decode($product->preserve);
                                         <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#facts-tab" role="tab" aria-controls="facts" aria-selected="false">Chi Tiết </a>
                                         </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#danhgianew-tab" role="tab" aria-controls="danhgianew" aria-selected="false">Đánh giá</a>
+                                        </li>
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="detail-tab" role="tabpanel" aria-labelledby="detail-tab">
@@ -70,6 +73,16 @@ $promotion =  json_decode($product->preserve);
                                         </div>
                                         <div class="tab-pane fade" id="facts-tab" role="tabpanel" aria-labelledby="facts-tab">
                                             {!!languageName($product->content)!!}
+                                        </div>
+                                        <div class="tab-pane fade" id="danhgianew-tab" role="tabpanel" aria-labelledby="danhgianew-tab">
+                                            <ul class="param">
+                                                @foreach ($seeding as $item)
+                                            
+                                                    <li>
+                                                    <span style="display: flex" style="padding-left: 2px"><img style="height: 70px;border-radius: 50%;width: 70px ;border: 1px solid #c9bfbf;"src="{{$item->price}}" alt="">&nbsp;<div style="padding: 8px; font-family: sans-serif;">{{$item->title}}</div></span>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -146,6 +159,9 @@ $promotion =  json_decode($product->preserve);
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#dfacts-tab" role="tab" aria-controls="facts" aria-selected="false">Chi Tiết</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#danhgia-tab" role="tab" aria-controls="danhgia" aria-selected="false">Đánh giá</a>
+                            </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="ddetail-tab" role="tabpanel" aria-labelledby="detail-tab">
@@ -154,6 +170,16 @@ $promotion =  json_decode($product->preserve);
                             <div class="tab-pane fade" id="dfacts-tab" role="tabpanel" aria-labelledby="facts-tab">
                                 <ul class="param">
                                     {!!languageName($product->content)!!}
+                                </ul>
+                            </div>
+                            <div class="tab-pane fade" id="danhgia-tab" role="tabpanel" aria-labelledby="danhgia-tab">
+                                <ul class="param">
+                                    @foreach ($seeding as $item)
+                                
+                                        <li>
+                                        <span style="display: flex" style="padding-left: 2px"><img style="height: 70px;border-radius: 50%;width: 70px ;border: 1px solid #c9bfbf;"src="{{$item->price}}" alt="">&nbsp;<div style="padding: 8px; font-family: sans-serif;">{{$item->title}}</div></span>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

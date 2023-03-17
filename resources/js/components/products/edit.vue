@@ -199,26 +199,28 @@
                   />
                 </vs-select>
               </div> -->
-              <!-- <div class="form-group">
-                <label>Phân loại bảo hành (nếu có)</label>
+              <div class="form-group">
+                <label>Sedding(nếu có)</label>
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
                     <div class="col-md-6">
                       <vs-input
                         type="text"
                         size="default"
-                        :placeholder="'Bảo hành ' + index"
+                        :placeholder="'Nội dung ' + index"
                         class="w-100"
                         v-model="objData.size[index].title"
                       />
                     </div>
                     <div class="col-md-4">
-                      <vs-input
-                        type="text"
+                      <image-upload
+                        type="avatar"
                         size="default"
-                        placeholder="Giá"
+                        placeholder="Hình ảnh"
                         class="w-100"
                         v-model="objData.size[index].price"
+                        :title="'anh-danh-gia'"
+                 
                       />
                       <br />
                     </div>
@@ -235,8 +237,8 @@
                 </div>
 
                 <el-button size="small" @click="addInput('size')"
-                  >Thêm bảo hành</el-button>
-              </div> -->
+                  >Thêm Sedding</el-button>
+              </div>  
               <!-- <div class="form-group">
                 <label>Khuyến mại sản phẩm</label>
                 <div v-for="(item, i) in objData.preserve" :key="i">

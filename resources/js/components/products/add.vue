@@ -207,7 +207,7 @@
                   />
                 </vs-select>
               </div> -->
-              <!-- <div class="form-group">
+              <div class="form-group">
                 <label>Phân loại bảo hành (nếu có)</label>
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
@@ -221,12 +221,11 @@
                       />
                     </div>
                     <div class="col-md-4">
-                      <vs-input
-                        type="text"
+                      <Upload_image_multi
+                        type="image"
                         size="default"
-                        placeholder="Giá"
                         class="w-100"
-                        v-model="objData.size[index].price"
+                        v-model="objData.size[index].image"
                       />
                       <br />
                     </div>
@@ -244,7 +243,7 @@
 
                 <el-button size="small" @click="addInput('size')"
                   >Thêm bảo hành</el-button>
-              </div> -->
+              </div>
               <!-- <div class="form-group">
                 <label>Khuyến mại sản phẩm</label>
                 <div v-for="(item, i) in objData.preserve" :key="i">
@@ -305,6 +304,7 @@ import TinyMce from "../_common/tinymce";
 import ImageMulti from "../_common/upload_image_multi";
 import "tinymce/icons/default/icons.min.js";
 import InputTag from "vue-input-tag";
+import Upload_image_multi from '../_common/upload_image_multi.vue';
 export default {
   name: "product",
   data() {
@@ -335,7 +335,7 @@ export default {
         size: [
           {
             title: "",
-            price: ""
+            image: []
           },
         ],
         price: 0,
@@ -380,6 +380,7 @@ export default {
     TinyMce,
     ImageMulti,
     InputTag,
+    Upload_image_multi,
   },
   computed: {},
   watch: {
@@ -395,6 +396,7 @@ export default {
       "findTypeCateTwo",
       "listProductBrand",
       "listProductCombo",
+      
     ]),
     saveProducts() {
       this.errors = [];
@@ -452,7 +454,7 @@ export default {
         var oj = {};
         if(key =='size'){
           oj.title = "";
-          oj.price = "";
+          oj.image = [];
           this.objData.size.push(oj);
         }
         if(key =='preserve'){

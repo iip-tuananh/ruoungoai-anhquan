@@ -214,7 +214,7 @@
                       <vs-input
                         type="text"
                         size="default"
-                        :placeholder="'Nội dung ' + index"
+                        :placeholder="'tên' + index"
                         class="w-100"
                         v-model="objData.size[index].name"
                       />

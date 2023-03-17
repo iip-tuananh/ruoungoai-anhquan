@@ -76,12 +76,14 @@ $promotion =  json_decode($product->preserve);
                                         </div>
                                         <div class="tab-pane fade" id="danhgianew-tab" role="tabpanel" aria-labelledby="danhgianew-tab">
                                             <ul class="param">
-                                                @dd(count($seeding));
-                                                @if(count($seeding)>0)
+                                           
+                                                @if($seeding != '')
                                                 @foreach ($seeding as $item)
+                                                @if($item->title != null && $item->price != null)
                                                     <li>
                                                     <span style="display: flex" style="padding-left: 2px"><img style="height: 70px;border-radius: 50%;width: 70px ;border: 1px solid #c9bfbf;"src="{{$item->price}}" alt="">&nbsp;<div style="padding: 8px; font-family: sans-serif;">{{$item->title}}</div></span>
                                                     </li>
+                                                    @endif
                                                 @endforeach
                                                 @else
                                                 Hiện tại chưa có đánh giá nào về sản phẩm này

@@ -219,6 +219,13 @@
                         class="w-100"
                         v-model="objData.size[index].title"
                       />
+                      <vs-input
+                        type="text"
+                        size="default"
+                        :placeholder="'Tên ' + index"
+                        class="w-100"
+                        v-model="objData.size[index].name"
+                      />
                     </div>
                     <div class="col-md-4">
                       <image-upload
@@ -336,7 +343,8 @@ export default {
         size: [
           {
             title: "",
-            price: []
+            price: "",
+            name: ""
           },
         ],
         price: 0,
@@ -455,7 +463,8 @@ export default {
         var oj = {};
         if(key =='size'){
           oj.title = "";
-          oj.price = [];
+          oj.price = "";
+          oj.name = ""
           this.objData.size.push(oj);
         }
         if(key =='preserve'){

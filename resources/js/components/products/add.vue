@@ -228,7 +228,6 @@
                         class="w-100"
                         v-model="objData.size[index].price"
                         :title="'anh-danh-gia'"
-                 
                       />
                       <br />
                     </div>

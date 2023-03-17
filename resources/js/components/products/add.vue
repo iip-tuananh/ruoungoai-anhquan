@@ -243,7 +243,7 @@
                   </div>
                 </div>
                 <el-button size="small" @click="addInput('size')"
-                  >Thêm bảo hành</el-button>
+                  >Thêm đánh giá</el-button>
               </div>
               <!-- <div class="form-group">
                 <label>Khuyến mại sản phẩm</label>

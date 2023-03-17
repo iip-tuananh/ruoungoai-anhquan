@@ -78,9 +78,9 @@ $promotion =  json_decode($product->preserve);
                                             <ul class="param">
                                                 @if($seeding != '')
                                                 @foreach ($seeding as $item)
-                                                @if($item->title != null && $item->price != null)
+                                                @if($item->title != null && $item->price != null && $item->name != null )
                                                     <li>
-                                                    <span style="display: flex" style="padding-left: 2px"><img style="height: 70px;border-radius: 50%;width: 70px ;border: 1px solid #c9bfbf;"src="{{$item->price}}" alt="">&nbsp;<div style="padding: 8px; font-family: sans-serif;">{{$item->name}}<br>{{$item->title}}</div></span>
+                                                    <span style="display: flex" style="padding-left: 2px"><img style="height: 70px;border-radius: 50%;width: 70px ;border: 1px solid #c9bfbf;"src="{{$item->price}}" alt="">&nbsp;<div style="padding: 8px; font-family: sans-serif;"><i style="font-weight:500">{{$item->name}}</i><br>{{$item->title}}</div></span>
                                                     </li>
                                                     @endif
                                                 @endforeach
@@ -181,10 +181,11 @@ $promotion =  json_decode($product->preserve);
                                 <ul class="param">
                                     @if(count($seeding)>0)
                                     @foreach ($seeding as $item)
-                                
+                                    @if($item->title != null && $item->price != null && $item->name != null )
                                         <li>
-                                        <span style="display: flex" style="padding-left: 2px"><img style="height: 70px;border-radius: 50%;width: 70px ;border: 1px solid #c9bfbf;"src="{{$item->price}}" alt="">&nbsp;<div style="padding: 8px; font-family: sans-serif;">{{$item->title}}</div></span>
+                                        <span style="display: flex" style="padding-left: 2px"><img style="height: 70px;border-radius: 50%;width: 70px ;border: 1px solid #c9bfbf;"src="{{$item->price}}" alt="">&nbsp;<div style="padding: 8px; font-family: sans-serif;"><i style="font-weight:500">{{$item->name}}</i><br>{{$item->title}}</div></span>
                                         </li>
+                                        @endif
                                     @endforeach
                                     @else
                                     Hiện tại chưa có đánh giá nào !

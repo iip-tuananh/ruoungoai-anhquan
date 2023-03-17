@@ -211,7 +211,7 @@
                 <label>Phân loại bảo hành (nếu có)</label>
                 <div v-for="(item, index) in objData.size" :key="index">
                   <div class="row">
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                       <vs-input
                         type="text"
                         size="default"
@@ -221,14 +221,15 @@
                       />
                     </div>
                     <div class="col-md-4">
-                      <Upload_image_multi
+                      <image-upload
                         type="image"
                         size="default"
                         class="w-100"
-                        v-model="objData.size[index].image"
+                        :title="'anh-danhgia'"
+                        v-model="objData.size[index].price"
                       />
                       <br />
-                    </div>
+                    </div> -->
                     <div class="col-md-2">
                       <a
                         href="javascript:;"
@@ -335,7 +336,7 @@ export default {
         size: [
           {
             title: "",
-            image: []
+            price: []
           },
         ],
         price: 0,
@@ -454,7 +455,7 @@ export default {
         var oj = {};
         if(key =='size'){
           oj.title = "";
-          oj.image = [];
+          oj.price = [];
           this.objData.size.push(oj);
         }
         if(key =='preserve'){

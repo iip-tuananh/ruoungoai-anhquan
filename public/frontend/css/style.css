@@ -17,7 +17,7 @@ a, a:focus, a:hover {
 }
 
 ::-webkit-scrollbar {
-    width: 1em;
+    /* width: 1em; */
 }
 
 ::-webkit-scrollbar-track {

@@ -72,12 +72,12 @@
                    <li class="hidden-lg hidden-md">
                       <a href="{{route('home')}}"><i class="fa-solid fa-house"></i>Trang chủ</a>
                    </li>
-                   <li class="hidden-lg hidden-md hidden-xs">
+                   <li class="hidden-lg hidden-md ">
                       <a href="{{route('aboutUs')}}"><i class="fa-solid fa-user-tie"></i>Giới thiệu</a>
                    </li>
-                   <li class="hidden-lg hidden-md">
+                   {{-- <li class="hidden-lg hidden-md">
                       <a href="{{route('lienHe')}}"><i class="fa-solid fa-phone-volume"></i>Liên Hệ</a>
-                   </li>
+                   </li> --}}
                    <li class="hidden-lg hidden-md">
                       <a class="head_cart_box" href="{{route('checkout')}}"><i class="fa-solid fa-cart-shopping"></i>Giỏ hàng
                    

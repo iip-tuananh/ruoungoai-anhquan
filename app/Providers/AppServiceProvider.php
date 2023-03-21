@@ -63,7 +63,6 @@ class AppServiceProvider extends ServiceProvider
                 $query->setRelation('product', $query->product->where('status', '=', 1)->take(18));
                 return $query;
             });
-            
             $productBrands = ProductBrands::where('status', 1)->get();
             $bannerAds_tren = BannerAds::where('status',1)->limit(2)->get(['name','image','id']);
             $bannerAds_duoi = BannerAds::where('status',2)->limit(4)->get(['name','image','id']);

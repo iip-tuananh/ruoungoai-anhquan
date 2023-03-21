@@ -60,9 +60,10 @@ class AppServiceProvider extends ServiceProvider
                     $query->with(['typetwo'])->where('status',1)->orderBy('id','DESC')->select('cate_id','id', 'name','avatar','slug','cate_slug'); 
                 }
             ])->where('status',1)->orderBy('id','asc')->get(['id','name','imagehome','avatar','slug'])->map(function ($query) {
-                $query->setRelation('product', $query->product->where('status', '=', 1)->take(24));
+                $query->setRelation('product', $query->product->where('status', '=', 1)->take(18));
                 return $query;
             });
+            
             $productBrands = ProductBrands::where('status', 1)->get();
             $bannerAds_tren = BannerAds::where('status',1)->limit(2)->get(['name','image','id']);
             $bannerAds_duoi = BannerAds::where('status',2)->limit(4)->get(['name','image','id']);

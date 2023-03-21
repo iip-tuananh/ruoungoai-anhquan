@@ -668,6 +668,7 @@ a, a:focus, a:hover {
     line-height: 20px;
     text-transform: uppercase;
     letter-spacing: .11em;
+    padding-left: 17px;
     color: #666;
     font-size: .7em;
     border-bottom: 1px solid #0e1d42;

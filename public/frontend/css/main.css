@@ -3021,7 +3021,7 @@
 @media only screen and (max-width: 768px){
   body{
     overflow-x: hidden !important;
-    margin: 8px !important;
+    margin: 0px !important;
 
   }
 }

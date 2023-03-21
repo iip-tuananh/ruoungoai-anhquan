@@ -163,7 +163,7 @@
     </div>
 
     @foreach ($categoryProduct as $key => $cate)
-        @if (count($cate->Product) > 0)
+        @if (count($cate->product) > 0)
             @if ($key % 2 != 0)
                 <div class="trending-block clearfix ">
                     <div class="container-md">
@@ -174,7 +174,7 @@
                         </div>
                         <div class="clearfix trend--grid">
                             <ul class="trend--prod">
-                                @foreach ($cate->Product as $pro)
+                                @foreach ($cate->product as $pro)
                                     @php
                                         $img = json_decode($pro->images);
                                         $giagiam = $pro['price'] - ($pro['price'] * $pro['discount']) / 100;
@@ -249,7 +249,7 @@
                         </div>
                         <div class="clearfix trend--grid">
                             <ul class="trend--prod">
-                                @foreach ($cate->Product as $pro)
+                                @foreach ($cate->product as $pro)
                                     @php
                                         $img = json_decode($pro->images);
                                         $giagiam = $pro['price'] - ($pro['price'] * $pro['discount']) / 100;

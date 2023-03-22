@@ -54,7 +54,7 @@ $promotion =  json_decode($product->preserve);
                                             <a class="nav-link active" data-toggle="tab" href="#detail-tab" role="tab" aria-controls="detail" aria-selected="true">Mô tả</a>
                                         </li> --}}
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#facts-tab" role="tab" aria-controls="facts" aria-selected="false">Chi Tiết </a>
+                                            <a class="nav-link active" data-toggle="tab" href="#facts-tab" role="tab" aria-controls="facts" aria-selected="false">Chi Tiết </a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" data-toggle="tab" href="#danhgianew-tab" role="tab" aria-controls="danhgianew" aria-selected="false">Đánh giá</a>
@@ -71,7 +71,7 @@ $promotion =  json_decode($product->preserve);
                                                 </span>
                                             </div>
                                         </div> --}}
-                                        <div class="tab-pane fade" id="facts-tab" role="tabpanel" aria-labelledby="facts-tab">
+                                        <div class="tab-pane fade active show" id="facts-tab" role="tabpanel" aria-labelledby="facts-tab">
                                             {!!languageName($product->content)!!}
                                         </div>
                                         <div class="tab-pane fade" id="danhgianew-tab" role="tabpanel" aria-labelledby="danhgianew-tab">
@@ -162,7 +162,7 @@ $promotion =  json_decode($product->preserve);
                                 <a class="nav-link active" data-toggle="tab" href="#ddetail-tab" role="tab" aria-controls="detail" aria-selected="true">Mô tả</a>
                             </li> --}}
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#dfacts-tab" role="tab" aria-controls="facts" aria-selected="false">Chi Tiết</a>
+                                <a class="nav-link active" data-toggle="tab" href="#dfacts-tab" role="tab" aria-controls="facts" aria-selected="false">Chi Tiết</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#danhgia-tab" role="tab" aria-controls="danhgia" aria-selected="false">Đánh giá</a>
@@ -172,7 +172,7 @@ $promotion =  json_decode($product->preserve);
                             {{-- <div class="tab-pane fade show active" id="ddetail-tab" role="tabpanel" aria-labelledby="detail-tab">
                                 {!!languageName($product->description)!!}
                             </div> --}}
-                            <div class="tab-pane fade" id="dfacts-tab" role="tabpanel" aria-labelledby="facts-tab">
+                            <div class="tab-pane fade show active" id="dfacts-tab" role="tabpanel" aria-labelledby="facts-tab">
                                 <ul class="param">
                                     {!!languageName($product->content)!!}
                                 </ul>

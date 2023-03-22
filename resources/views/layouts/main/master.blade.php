@@ -124,7 +124,7 @@
         <link href="{{asset('frontend/css/main.css')}}" rel="stylesheet"/>
         <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet"/>
     </head>
-    <body data-rsssl=1 class="home blog theme-gv-whisky woocommerce-no-js">
+    <body style="overflow-x: hidden" data-rsssl=1 class="home blog theme-gv-whisky woocommerce-no-js">
         <div class="zalo-cus">
             <a href="http://zalo.me/{{$setting->phone1}}"><img src="{{asset('frontend/images/zalo-icon.png')}}" alt="" srcset=""></a>
         </div>
@@ -232,7 +232,8 @@
         
         <script src="{{asset('frontend/js/notify.min.js')}}"></script>
         @if (session()->has('successBill'))
-    <script>
+    </body>
+     <script>
         console.log(123);
         $.notify("Đặt hàng thành công", "success"
 			);

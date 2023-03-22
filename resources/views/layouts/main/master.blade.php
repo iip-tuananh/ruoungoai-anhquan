@@ -124,7 +124,7 @@
         <link href="{{asset('frontend/css/main.css')}}" rel="stylesheet"/>
         <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet"/>
     </head>
-    <body  data-rsssl=1 class="">
+    <body>
         <div class="zalo-cus">
             <a href="http://zalo.me/{{$setting->phone1}}"><img src="{{asset('frontend/images/zalo-icon.png')}}" alt="" srcset=""></a>
         </div>

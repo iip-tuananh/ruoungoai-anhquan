@@ -3018,6 +3018,9 @@
   border-left: 25px solid transparent;
   border-right: 25px solid transparent;
 }
+body{
+  overflow-x: hidden !important;
+}
 @media only screen and (max-width: 768px){
   body{
     overflow-x: hidden !important;
